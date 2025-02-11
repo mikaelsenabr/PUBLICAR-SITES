@@ -1,96 +1,67 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<!-- 
+Tutorial: https://www.youtube.com/watch?v=zxxB9SFh9p4
+-->
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="imagens/Programming.ico" type="image/x-icon">
-    <title>Aprendendo Html</title>
-    <style>
-      body {
-          background-color: #78756c;
-
-
-
-      }
-
-
-    </style>
-
+    <title>Do you like me?</title>
 </head>
+
 <body>
-    
-    <h1>Olá, Mundo!</h1>
-    <hr>
-    <p>Esse é o meu primeiro documento html!</p>
-    <p>Este é um momento único, estou criando um site!"</p>
-    <hr>
-
-    <h1>Parágrafos e quebras de linhas</h1>
-    <p>Você pode escrever um parágrafo de qualquer jeito
-      basta colocar no meio do par de tags &lt;p&gt; e &lt;/p&gt; <!--LESS THAN  / GREATER THAN-->
-    </p>
-    <p>Se precisar quebrar o texto em algum lugar específico <br> 
-      como   esse basta usar a tag &lt;br &gt; 
-    </p> 
-    <hr>
-
-    <h1>Símbolos e Emojis</h1>
-    <p>Vamos adicionar alguns símbolos especiais:
-      &reg;
-      &copy;
-      &trade;
-      &euro;
-      &pound;
-      &yen;
-      &cent;
-      &Delta;
-     &uparrow;
-    </p>
-    <p>Vamos adicionar alguns emojis:
-      &#x1F4DA
-      &#x1F4BB
-      &#x1F60A
-    <hr>
-    
-    <h1>Testando imagens</h1>  
-    <p>Abaixo você vai ver uma imagem que está na mesma pasta.</p>
-    <img src="logo-html.png" alt="Logo HTML5">
-    <p>Podemos também carregar imagens que estão em sub-pastas</p>
-    <img src="imagens/logo-css.png" alt="Logo CSS3">
-    <p>Também podemos carregar imagens externas</p>
-    <img src="https://a.thumbs.redditmedia.com/zDOFJTXd6fmlD58VDGypiV94Leflz11woxmgbGY6p_4.png" alt="Logo JavaScript"> 
-    <hr>
-
-    <h1>Teste de Favicon</h1>
-    <p>Olhe o meu favicon, ao lado do titulo do meu site</p>
-    <hr>
-
-    <!--Hierarquia de Títulos-->
-    <h1>Entendendo Portugal</h1>
-    <h2>Introdução</h2>
-    <h3>Justificação da Temática</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, repudiandae sit corrupti officiis, provident voluptatibus repellat omnis facere quod earum doloremque tenetur, nihil esse autem dolore ullam natus iusto? Et!</p>
-    <h3>Caráter Excecional</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde reprehenderit aut, dignissimos aliquid pariatur alias temporibus quasi iure quibusdam totam dolorem itaque provident odio magnam maiores at repudiandae, beatae exercitationem.</p>
-    <h3>Perguntas de Partida</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis nemo consequatur, incidunt aliquam iusto praesentium iste officiis! Nostrum provident dolor tenetur, cum ut reiciendis praesentium possimus fugit et esse perferendis.</p>
-    <h3>Metodologia de Investigação</h3>
-    <h4>Etapas de Investigação</h4>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit omnis deserunt debitis placeat optio reprehenderit ullam dolor magni autem fuga officiis sint aut iure, consectetur fugit? Doloribus tempore ipsum perferendis.</p>
-    <h4>Instrumentos de Análise e Fontes de Informação</h4>
-    <h2>Ordenamento do Territorio em Portugal</h2>
-    <h3>Os Instrumentos de Gestão</h3>
-    <h4>Os instrumentos de Planejamento Territorial</h4>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio doloribus non vitae veniam omnis minima debitis dolores reprehenderit sint architecto assumenda alias, autem eligendi vero totam labore odit dignissimos ratione!</p>
-    <h4>Os regimes Territoriais Especiais</h4>
-    <hr>
-
-    <h1>Exemplo de Semântica</h1>
-    <P>Eu moro na <address> Rua do córrego</address></p>
-    
-
-
-
-    
+    <div id="conteudo">
+        <h2>Você gosta de mim??</h2>
+        <div style="margin: auto;width: 170px;">
+            <button style="position: fixed;display: block;" class="btn" onclick="sim()">SIM</button>
+            <button class="btn" onclick="desvia(this)" onmouseover="desvia(this)" style="position: absolute;">NÃO</button>
+        </div>
+    </div>
 </body>
+<style>
+    #conteudo {
+        background: #ff7a7a;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 10px;
+        text-align: center;
+        font-family: sans-serif;
+    }
+
+    .btn {
+        background: black;
+        color: white;
+        border: none;
+        padding: 10px;
+        width: 80px;
+        border-radius: 5px;
+    }
+</style>
+
+<script>
+    function sim() {
+        alert("Você acabou de assumir que gosta de mim kakak! :)");
+        // redireciona para um URL após clicar no SIM
+        location.href = "https://youtu.be/6_hVTO3SGO4?si=hy3gotXF050wkuj7";
+    }
+
+    function desvia(btn) {
+        // btn declarado na função
+        btn.style.position = 'absolute';
+        btn.style.bottom = geraPosicao(10, 90);
+        btn.style.left = geraPosicao(10, 90);
+        console.log('opa, desviei...');
+    }
+
+    function geraPosicao(min, max) {
+        return (Math.random() * (max - min) + min) + "%";
+    }
+
+</script>
+
 </html>
