@@ -40,6 +40,7 @@ section {
     width: 150px;
     height: 150px;
     border-radius: 50%;
+    object-fit: cover;
 }
 
 .galeria img {
@@ -65,7 +66,23 @@ button {
     padding: 0.5rem;
     border: none;
 }
+#encontre-equipe {
+    padding: 2rem;
+    background-color: #f0f0f0; /* Cor de fundo opcional */
+}
 
+#encontre-equipe ul {
+    list-style: none;
+    padding: 0;
+}
+
+#encontre-equipe li {
+    margin-bottom: 1rem;
+}
+
+#encontre-equipe strong {
+    font-weight: bold;
+}
 footer {
     background-color: #333;
     color: #fff;
